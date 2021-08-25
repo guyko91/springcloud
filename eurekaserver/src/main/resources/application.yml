@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+        defaultZone: http://localhost:8080/eureka/
+  server:
+    response-cache-update-interval-ms: 1000 # Eureka Server's Response Cache. Default 30,000ms
+    enable-self-preservation: false
