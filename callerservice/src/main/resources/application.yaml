@@ -9,9 +9,12 @@ eureka:
   instance:
     prefer-ip-address: true
   client:
-    register-with-eureka: true
-    fetch-registry: false
-    registry-fetch-interval-seconds: 1
     disable-delta: true
     service-url:
       defaultZone: http://localhost:8080/eureka/
+
+ribbon:
+  eureka:
+    enabled: true
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
