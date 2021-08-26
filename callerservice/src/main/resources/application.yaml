@@ -18,3 +18,5 @@ ribbon:
     enabled: true
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: true
+  retryableStatusCodes: 502, 503

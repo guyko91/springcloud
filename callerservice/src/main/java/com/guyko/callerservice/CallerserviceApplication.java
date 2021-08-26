@@ -12,6 +12,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -35,6 +36,12 @@ public class CallerserviceApplication {
         @GetMapping("hello")
         public String hello() {
             return restTemplate.getForObject("http://MICRO-SERVICE/hello", String.class);
+        }
+
+        @GetMapping("helloPost")
+        public String helloPost() {
+            ResponseEntity<String> result = restTemplate.postForEntity("http://MICRO-SERVICE/hello-post", null, String.class);
+            return result.getBody();
         }
 
     }
